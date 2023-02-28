@@ -1,0 +1,111 @@
+<!-- Start Content-->
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Gestion</a></li>
+                        <li class="breadcrumb-item active">Clients</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Clients</h4>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-2">
+                        <div class="col-sm-4">
+                            <a routerLink="/client/create" href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Ajout Client</a>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="text-sm-end">
+                                <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog-outline"></i></button>
+                                <button type="button" class="btn btn-light mb-2 me-1">Import</button>
+                                <button type="button" class="btn btn-light mb-2">Export</button>
+                            </div>
+                        </div>
+                        <!-- end col-->
+                    </div>
+
+                    <div class="table-responsive">
+                        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-centered w-100 dt-responsive nowrap">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="all" style="width: 20px;">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="customCheck1">
+                                            <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                        </div>
+                                    </th>
+                                    <th class="all">Raison Social</th>
+                                    <th>Addresse</th>
+                                    <th>Téléphone</th>
+                                    <th>Mobile</th>
+                                    <th>Email</th>
+                                    <th>Code Client</th>
+                                    <th style="width: 85px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let client of clientsList">
+                                    <td>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="customCheck2">
+                                            <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="m-0 d-inline-block align-middle font-16">
+                                            <a class="text-body">{{client.raisonSocial}}</a>
+                                            <br>
+
+                                        </p>
+                                    </td>
+                                    <td>
+                                        {{client.address}}
+                                    </td>
+                                    <td>
+                                        {{client.telephone}}
+                                    </td>
+                                    <td>
+                                        {{client.mobile}}
+                                    </td>
+
+                                    <td>
+                                        {{client.email}}
+                                    </td>
+
+                                    <td>
+                                        {{client.mobile}}
+                                    </td>
+
+                                    <td class="table-action">
+                                        <a [routerLink]="['/client/detail', client.id]" href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
+                                        <a [routerLink]="['/client/edit', client.id]" href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                        <a (click)="onDeleteClient(client.id)" href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end card-body-->
+            </div>
+            <!-- end card-->
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+
+</div>
+<!-- container -->

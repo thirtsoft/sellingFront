@@ -1,0 +1,244 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Gestion</a></li>
+                        <li class="breadcrumb-item active">Ventes</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Effecuez une Vente</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 mb-1">
+                            <label for="barCode" class="form-label">Code-barre</label>
+                            <input type="text" id="barCode" name="barCode" required class="form-control" placeholder="Enter code-barre">
+                        </div>
+
+                        <div class="col-lg-3 mb-1">
+                            <label for="montantReglement" class="form-label">Montant réglement</label>
+                            <input type="number" name="montantReglement" class="form-control" placeholder="Enter montant Reglement">
+                        </div>
+
+                        <div class="col-lg-3 mb-1">
+                            <label for="project-overview" class="form-label">Type réglement</label>
+                            <select class="form-control select2" name="subCategory" data-toggle="select2">
+                                <option value="0">Select</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Wave">Wave</option>
+                                <option value="OrangeMoney">OrangeMoney</option>
+                                <option value="FreeMoney">FreeMoney</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-3 mb-1">
+                            <label for="numeroVente" class="form-label">Numéro vente</label>
+                            <input type="text" name="numeroVente" class="form-control" placeholder="Enter numeroVente">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-12">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-centered mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Prix</th>
+                                            <th>Quantité</th>
+                                            <th>Total</th>
+                                            <th style="width: 50px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/images/products/product-1.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
+                                                <p class="m-0 d-inline-block align-middle font-16">
+                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Amazing Modern Chair</a>
+                                                    <br>
+                                                    <small class="me-2"><b>Size:</b> Large </small>
+                                                    <small><b>Color:</b> Light Green
+                                                                        </small>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                $148.66
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value="5" class="form-control" placeholder="Qty" style="width: 90px;">
+                                            </td>
+                                            <td>
+                                                $743.30
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/images/products/product-2.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
+                                                <p class="m-0 d-inline-block align-middle font-16">
+                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Biblio Plastic Armchair</a>
+                                                    <br>
+                                                    <small class="me-2"><b>Size:</b> Small </small>
+                                                    <small><b>Color:</b> Brown </small>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                $99.00
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value="2" class="form-control" placeholder="Qty" style="width: 90px;">
+                                            </td>
+                                            <td>
+                                                $198.00
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/images/products/product-3.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
+                                                <p class="m-0 d-inline-block align-middle font-16">
+                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Designer Awesome Chair</a>
+                                                    <br>
+                                                    <small class="me-2"><b>Size:</b> Medium </small>
+                                                    <small><b>Color:</b> Green </small>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                $49.99
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value="10" class="form-control" placeholder="Qty" style="width: 90px;">
+                                            </td>
+                                            <td>
+                                                $499.90
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <img src="assets/images/products/product-5.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
+                                                <p class="m-0 d-inline-block align-middle font-16">
+                                                    <a href="apps-ecommerce-products-details.html" class="text-body">Unpowered aircraft</a>
+                                                    <br>
+                                                    <small class="me-2"><b>Size:</b> Large </small>
+                                                    <small><b>Color:</b> Orange </small>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                $129.99
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value="1" class="form-control" placeholder="Qty" style="width: 90px;">
+                                            </td>
+                                            <td>
+                                                $129.99
+                                            </td>
+                                            <td>
+                                                <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-sm-4">
+                                    <a routerLink="/vente/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                        <i class="mdi mdi-arrow-left"></i> Liste vente </a>
+                                </div>
+                                <!-- end col -->
+                                <!--  <div class="col-sm-8">
+                                    <div class="text-sm-end">
+                                        <a class="btn btn-danger btn-block">
+                                            <i class="mdi mdi-cart-plus me-1"></i> Enregistrer </a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="border p-3 mt-4 mt-lg-0 rounded">
+                                <h4 class="header-title mb-3">Résumé Vente</h4>
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Num Vente :</td>
+                                                <td>$1571.19</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Grand Total :</td>
+                                                <td>$1571.19</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Montant Réglement : </td>
+                                                <td>-$157.11</td>
+                                                <!--  <td>Shipping Charge :</td>
+                                                <td>$25</td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>Methode réglement : </td>
+                                                <td>$19.22</td>
+                                                <!--  <td>Estimated Tax : </td>
+                                                <td>$19.22</td> -->
+                                            </tr>
+                                            <tr>
+                                                <th>Rendu :</th>
+                                                <th>$1458.3</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- <div class="alert alert-warning mt-3" role="alert">
+                                Use coupon code <strong>HYPBM</strong> and get 10% discount !
+                            </div> -->
+
+                            <div class="d-grid gap-2 mt-3">
+                                <button class="btn btn-danger btn-block">
+                                    <i class="mdi mdi-cart-plus me-1"></i> Enregistrer </button>
+                            </div>
+
+                            <!--  <div class="input-group mt-3">
+                                <input type="text" class="form-control form-control-light" placeholder="Coupon code" aria-label="Recipient's username">
+                                <button class="input-group-text btn-light" type="button">Apply</button>
+                            </div> -->
+
+                        </div>
+                        <!-- end col -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

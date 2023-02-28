@@ -1,0 +1,169 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Gestion</a></li>
+                        <li class="breadcrumb-item active">Ventes</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Effectuez une vente</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="montantReglement" class="form-label">Montant réglement</label>
+                            <input type="number" [(ngModel)]="montantReglement" class="form-control" placeholder="Enter montant Reglement">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="project-overview" class="form-label">Type réglement</label>
+                            <select class="form-control select2" [(ngModel)]="typeReglement" data-toggle="select2">
+                                <option value="0">Select</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Wave">Wave</option>
+                                <option value="OrangeMoney">OrangeMoney</option>
+                                <option value="FreeMoney">FreeMoney</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 mb-1">
+                            <label for="numeroVente" class="form-label">Numéro Vente</label>
+                            <input type="text" class="form-control" placeholder="Enter numeroVente">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-lg-2 mb-3">
+                            <label for="barCode" class="form-label">Code-barre</label>
+                            <input type="text" placeholder="Code article" [(ngModel)]="codebarProduct" (input)="filtrerArticle()" required class="form-control" style="cursor: pointer;" placeholder="Enter code-barre">
+                            <div *ngIf="codebarProduct.length && !productNotYetSelected" class="autocomplete shadow p-3 mb-5 bg-white rounded" style="cursor: pointer;">
+                                <p class="p-1" *ngFor="let article of listProduct" (click)="selectProductClick(article)">
+                                    {{ article.barCode }}&nbsp; {{ article.designation }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 mb-3">
+                            <label for="quantite" class="form-label">Quantité</label>
+                            <input type="number" [(ngModel)]="quantite" class="form-control" placeholder="Enter quantité commande">
+                        </div>
+
+                        <div class="col-lg-3 mb-3">
+                            <label for="prixVente" class="form-label">Prix Unitaire</label>
+                            <input type="number" [(ngModel)]="searchedProduct.prixDetail" class="form-control">
+                        </div>
+
+                        <div class="col-lg-2 mb-3 mt-3">
+                            <a (click)="ajouterLigneVente()" class="btn btn-success"><i class="mdi mdi-plus-circle"></i> Ajout</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-12">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-centered mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Prix</th>
+                                            <th>Quantité</th>
+                                            <th>Total</th>
+                                            <th style="width: 50px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let ligne of ligneVentes; let i=index;">
+                                            <td>
+                                                <img src="assets/images/products/product-1.jpg" alt="contact-img" title="contact-img" class="rounded me-3" height="64">
+                                                <p class="m-0 d-inline-block align-middle font-16">
+                                                    <a href="apps-ecommerce-products-details.html" class="text-body">{{ligne.product?.designation}}</a>
+                                                    <br>
+                                                    <small class="me-2"><b>code-barre:</b> {{ligne.product?.barCode}} </small>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                {{ligne.prixVente}}
+                                            </td>
+                                            <td>
+                                                <input type="number" min="1" value="{{ligne.quantite}}" class="form-control" placeholder="Qty" style="width: 90px;">
+                                            </td>
+                                            <td>
+                                                {{ ligne.prixVente && ligne.quantite ? +ligne.prixVente * +ligne.quantite : '' }}
+                                            </td>
+                                            <td>
+                                                <a (click)="onDeleteOrderItem(ligne.id,i)" href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-sm-4">
+                                    <a routerLink="/commande/list" class="btn text-muted d-none d-sm-inline-block btn-link fw-semibold">
+                                        <i class="mdi mdi-arrow-left"></i> Liste commande </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="border p-3 mt-4 mt-lg-0 rounded">
+                                <h4 class="header-title mb-3">Résumé Vente</h4>
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td>Num Vente :</td>
+                                                <td>{{this.codeVente}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Grand Total :</td>
+                                                <td>{{totalVente}}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Montant Réglement : </td>
+                                                <td>{{this.montantReglement}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Methode réglement : </td>
+                                                <td>{{this.typeReglement}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>A Rendre :</th>
+                                                <th>{{this.montantReglement - totalVente}}</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2 mt-3">
+                                <button class="btn btn-danger btn-block" (click)="enregistrerCommande()">
+                                    <i class="mdi mdi-cart-plus me-1"></i> Enregistrer </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
