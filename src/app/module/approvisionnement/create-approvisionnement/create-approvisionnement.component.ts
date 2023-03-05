@@ -18,7 +18,7 @@ export class CreateApprovisionnementComponent implements OnInit {
   origin:any = '';
   selectedClientFournisseur: any = {};
   listClientsFournisseurs: Array<any> = [];
-  searchedProduct: any = new Product();
+  searchedProduct: Product = {};
   listProduct: Array<Product> = [];
   codebarProduct = '';
   quantite = '';

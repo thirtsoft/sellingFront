@@ -96,21 +96,21 @@
 
                                     </td> -->
                                     <td>
-                                        <span *ngIf="item.qtestock > item.stockInitial">
-                                            <ngb-progressbar type="success " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
-                                                {{ (item.qtestock * 100) / this.val }}%
+                                        <span *ngIf="item.qtestock && item.stockInitial ? item.qtestock > item.stockInitial : '' ">
+                                            <ngb-progressbar type="success " [value]="(item?.qtestock! * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock! * 100) / this.val }}%
                                             </ngb-progressbar>
                                         </span>
 
-                                        <span *ngIf="item.qtestock == item.stockInitial">
-                                            <ngb-progressbar type="warning " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
-                                                {{ (item.qtestock * 100) / this.val }}%
+                                        <span *ngIf="item.qtestock === item.stockInitial">
+                                            <ngb-progressbar type="warning " [value]="(item.qtestock! * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock! * 100) / this.val }}%
                                             </ngb-progressbar>
                                         </span>
 
-                                        <span *ngIf="item.qtestock < item.stockInitial">
-                                            <ngb-progressbar type="danger " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
-                                                {{ (item.qtestock * 100) / this.val }}%
+                                        <span *ngIf="((item.qtestock!) < (item.stockInitial!))">
+                                            <ngb-progressbar type="danger " [value]="(item.qtestock! * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock! * 100) / this.val }}%
                                             </ngb-progressbar>
                                         </span>
                                     </td>

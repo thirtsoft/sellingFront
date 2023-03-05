@@ -18,9 +18,9 @@ export class CreateCommandeComponent implements OnInit {
   origin:any = '';
   selectedClientFournisseur: any = {};
   listClientsFournisseurs: Array<any> = [];
-  searchedProduct: any = new Product();
+  searchedProduct: Product = {};
   listProduct: Array<Product> = [];
-  codebarProduct = '';
+  codeProduct = '';
   quantite = '';
   codeCommande = '';
   typeReglement = '';
@@ -43,9 +43,10 @@ export class CreateCommandeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    /*
     this.activatedRoute.data.subscribe(data => {
       this.origin = data[origin];
-    });
+    });*/
     this.findAllClientsFournisseurs();
     this.findAllProducts();
   }
@@ -59,26 +60,27 @@ export class CreateCommandeComponent implements OnInit {
 
   findAllProducts(): void {
     this.productService.getAllProducts()
-    .subscribe(articles => {
-      this.listProduct = articles;
+    .subscribe(products => {
+      this.listProduct = products;
     });
   }
 
-  filtrerArticle(): void {
-    if (this.codebarProduct.length === 0) {
+  filtrerProduct(): void {
+    if (this.codeProduct.length === 0) {
       this.findAllProducts();
     }
     this.listProduct = this.listProduct
-    .filter(art => art.barCode?.includes(this.codebarProduct) || art.designation?.includes(this.codebarProduct));
+    .filter(prod => prod.barCode?.includes(this.codeProduct) || prod.designation?.includes(this.codeProduct));
   }
 
   ajouterLigneCommande(): void {
     this.checkLigneCommande();
     this.calculerTotalCommande();
     console.log(this.calculerTotalCommande());
+
     this.searchedProduct = {};
     this.quantite = '';
-    this.codebarProduct = '';
+    this.codeProduct = '';
     this.productNotYetSelected = false;
     this.findAllProducts();
   }
@@ -93,10 +95,12 @@ export class CreateCommandeComponent implements OnInit {
   }
 
   private checkLigneCommande(): void {
-    const ligneCmdAlreadyExists = this.lcomms.find(lig => lig.article?.codeArticle === this.searchedProduct.barCode);
+    const ligneCmdAlreadyExists = this.lcomms.find(lig => lig.product?.codeProduct === this.searchedProduct.barCode);
+    console.log(this.lcomms);
+    
     if (ligneCmdAlreadyExists) {
       this.lcomms.forEach(lig => {
-        if (lig && lig.article?.codeArticle === this.searchedProduct.barCode) {
+        if (lig.product?.codeProduct === this.searchedProduct.barCode) {
           // @ts-ignore
           lig.quantite = lig.quantite + +this.quantite;
         }
@@ -111,9 +115,9 @@ export class CreateCommandeComponent implements OnInit {
     }
   }
 
-  selectProductClick(article: Product): void {
-    this.searchedProduct = article;
-    this.codebarProduct = article.barCode ? article.barCode : '';
+  selectProductClick(product: Product): void {
+    this.searchedProduct = product;
+    this.codeProduct = product.barCode ? product.barCode : '';
     this.productNotYetSelected = true;
   }
 

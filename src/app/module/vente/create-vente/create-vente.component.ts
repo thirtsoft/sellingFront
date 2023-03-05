@@ -16,7 +16,7 @@ export class CreateVenteComponent implements OnInit {
 
   selectedClientFournisseur: any = {};
   listClientsFournisseurs: Array<any> = [];
-  searchedProduct: any = new Product();
+  searchedProduct: Product = {};
   listProduct: Array<Product> = [];
   codebarProduct = '';
   quantite = '';
@@ -56,7 +56,7 @@ export class CreateVenteComponent implements OnInit {
   }
 
   ajouterLigneVente(): void {
-    if ((+this.quantite < this.searchedProduct.qtestock) && (+this.quantite > 0)) {
+    if ((+this.quantite < this.searchedProduct.qtestock!) && (+this.quantite > 0)) {
       this.checkLigneVente();
       this.calculerTotalVente();
       this.searchedProduct = {};

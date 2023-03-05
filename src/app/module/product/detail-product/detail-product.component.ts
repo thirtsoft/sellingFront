@@ -12,8 +12,8 @@ import { SubcategoryService } from 'src/app/services/subcategory.service';
   styleUrls: ['./detail-product.component.css']
 })
 export class DetailProductComponent implements OnInit {
-  
-  productData: Product = new Product(); 
+
+  productData: Product = {};
 
   paramId :any = 0;
 

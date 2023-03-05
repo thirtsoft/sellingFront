@@ -33,7 +33,8 @@ export class InvoiceVenteComponent implements OnInit {
   username='';
   status:any;
 
-  product: Product = new Product();
+  searchedProduct: Product = {};  
+
   info: any;
 
   constructor(private venteService: VenteService, 

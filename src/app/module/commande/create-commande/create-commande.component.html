@@ -70,10 +70,10 @@
                     <div class="row">
                         <div class="col-lg-2 mb-3">
                             <label for="barCode" class="form-label">Code-barre</label>
-                            <input type="text" placeholder="Code article" [(ngModel)]="codebarProduct" (input)="filtrerArticle()" required class="form-control" placeholder="Enter code-barre">
-                            <div *ngIf="codebarProduct.length && !productNotYetSelected" class="autocomplete shadow p-3 mb-5 bg-white rounded">
-                                <p class="p-1" *ngFor="let article of listProduct" (click)="selectProductClick(article)">
-                                    {{ article.barCode }}&nbsp; {{ article.designation }}
+                            <input type="text" placeholder="Code article" [(ngModel)]="codeProduct" (input)="filtrerProduct()" required class="form-control" placeholder="Enter code-barre">
+                            <div *ngIf="codeProduct.length && !productNotYetSelected" class="autocomplete shadow p-3 mb-5 bg-white rounded">
+                                <p class="p-1" *ngFor="let product of listProduct" (click)="selectProductClick(product)">
+                                    {{ product.barCode }}&nbsp; {{ product.designation }}
                                 </p>
                             </div>
                         </div>

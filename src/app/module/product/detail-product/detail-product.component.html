@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <h6 class="font-14">Revenue:</h6>
-                                            <p class="text-sm lh-150">{{productData.qtestock * productData.prixVente}}</p>
+                                            <p class="text-sm lh-150">{{productData.qtestock && productData.prixVente ? productData.qtestock * productData.prixVente : ''}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                                 </div>
                                             </td>
                                             <td>{{productData.stockInitial}}</td>
-                                            <td>{{productData.qtestock * productData.prixVente}} -- {{productData.qtestock * productData.prixDetail}}</td>
+                                            <td>{{productData.qtestock && productData.prixVente ? productData.qtestock * productData.prixVente : ''}} -- {{productData.qtestock && productData.prixDetail ? productData.qtestock * productData.prixDetail : ''}}</td>
                                         </tr>
                                     </tbody>
                                 </table>

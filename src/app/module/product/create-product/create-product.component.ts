@@ -14,7 +14,7 @@ import { SubcategoryService } from 'src/app/services/subcategory.service';
 export class CreateProductComponent implements OnInit {
 
   subCategoriesListData: Subcategory[] = [];
-  productData: Product = new Product(); 
+  productData: Product = {};
 
   paramId :any = 0;
 
@@ -74,7 +74,7 @@ export class CreateProductComponent implements OnInit {
   }
 
   onUpdateProduct() {
-    this.productService.updateProduct(this.productData.id, this.productData).subscribe(
+    this.productService.updateProduct(this.productData.id!, this.productData).subscribe(
       (response: Product) => {
         /*
         this.toastr.warning('avec succès','Category Modifiée', {

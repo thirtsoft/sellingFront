@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
     this.productService.getAllProducts().subscribe(res => {
       this.productList = res;
       for(let i = 0; i< this.productList.length; i++) {
-        if ((this.productList[i].qtestock) < (this.productList[i].stockInitial)) {
+        if ((this.productList[i].qtestock!) < (this.productList[i].stockInitial!)) {
           this.alerteStockArticleEpuise++;
         }
       }
