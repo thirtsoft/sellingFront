@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ListStockComponent implements OnInit {
 
   stocksList: Product[] = [];
+  val = 25;
 
   dtOptions: DataTables.Settings = {};
   dtTrigger:Subject<any>=new Subject<any>();
@@ -35,6 +36,7 @@ export class ListStockComponent implements OnInit {
     this.productService.getAllProducts().subscribe(
       (response: Product[]) => {
         this.stocksList = response;
+        console.log(this.stocksList);
         this.dtTrigger.next(null);
       },
       (error: HttpErrorResponse) => {

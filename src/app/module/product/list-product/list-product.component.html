@@ -50,7 +50,7 @@
                                     <th>Categorie</th>
                                     <th>Prix Achat</th>
                                     <th>Prix Vente</th>
-                                    <th>Quantité</th>
+                                    <th>Quantité en Stock</th>
                                     <th>Status</th>
                                     <th style="width: 85px;">Action</th>
                                 </tr>
@@ -85,7 +85,16 @@
                                         {{product.qtestock}}
                                     </td>
                                     <td>
-                                        <span class="badge bg-success">Active</span>
+                                        <!-- <span class="badge bg-success">Active</span> -->
+                                        <h5 *ngIf="product.qtestock > product.stockInitial">
+                                            <span class="text-success">ENCOURS</span> </h5>
+
+                                        <h5 *ngIf="product.qtestock == product.stockInitial">
+                                            <span class="text-warning">SEUIL</span> </h5>
+
+                                        <h5 *ngIf="product.qtestock < product.stockInitial">
+                                            <span class="text-danger">EPUISEE</span> </h5>
+
                                     </td>
 
                                     <td class="table-action">

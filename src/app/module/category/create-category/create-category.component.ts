@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -19,7 +20,7 @@ export class CreateCategoryComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,
               private router: Router,
-    //          private toastr: ToastrService,
+              private toastr: ToastrService,
             //  public dialog: MatDialog,
               private actRoute: ActivatedRoute,
   ){
@@ -56,12 +57,10 @@ export class CreateCategoryComponent implements OnInit {
   onAddCategory() {
     this.categoryService.addCategory(this.formDataCategoryDTO).subscribe(
       (response: Category) => {
-        /*
         this.toastr.success('avec succès','Category Ajoutée', {
-          timeOut: 1500,
+          timeOut: 3000,
           positionClass: 'toast-top-right',
         });
-        */
         this.router.navigateByUrl("/categorie/list").then(() => {
           window.location.reload();
         });

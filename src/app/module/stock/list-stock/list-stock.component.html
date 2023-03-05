@@ -61,7 +61,7 @@
                                     <th>Article</th>
                                     <th>Stock réel</th>
                                     <th>Stock référence</th>
-                                    <th>Status</th>
+                                    <!--  <th>Status</th> -->
                                     <th>Observation</th>
                                     <th style="width: 125px;">Action</th>
                                 </tr>
@@ -84,14 +84,35 @@
                                     <td>
                                         {{item.stockInitial}}
                                     </td>
+                                    <!--  <td>
+                                        <h5 *ngIf="item.qtestock > item.stockInitial">
+                                            <span class="text-success">ENCOURS</span> </h5>
+
+                                        <h5 *ngIf="item.qtestock == item.stockInitial">
+                                            <span class="text-warning">SEUIL</span> </h5>
+
+                                        <h5 *ngIf="item.qtestock < item.stockInitial">
+                                            <span class="text-danger">EPUISEE</span> </h5>
+
+                                    </td> -->
                                     <td>
-                                        <h5>
-                                            {{item.qtestock
-                                            <=item.stockInitial ? <span class="badge badge-danger-lighten"><i class="mdi mdi-coin"></i> "EPUISEE" </span> :
-                                                <span class="badge badge-success-lighten"><i class="mdi mdi-coin"></i> "ENCOURS" </span> }}</h5>
-                                    </td>
-                                    <td>
-                                        <h5><span class="badge badge-info-lighten">{{item.qtestock}}</span></h5>
+                                        <span *ngIf="item.qtestock > item.stockInitial">
+                                            <ngb-progressbar type="success " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock * 100) / this.val }}%
+                                            </ngb-progressbar>
+                                        </span>
+
+                                        <span *ngIf="item.qtestock == item.stockInitial">
+                                            <ngb-progressbar type="warning " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock * 100) / this.val }}%
+                                            </ngb-progressbar>
+                                        </span>
+
+                                        <span *ngIf="item.qtestock < item.stockInitial">
+                                            <ngb-progressbar type="danger " [value]="(item.qtestock * 100) / this.val" [striped]="true" [animated]="true" style="height: 20px; width: 100%; font-size: 16px">
+                                                {{ (item.qtestock * 100) / this.val }}%
+                                            </ngb-progressbar>
+                                        </span>
                                     </td>
                                     <td>
                                         <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
