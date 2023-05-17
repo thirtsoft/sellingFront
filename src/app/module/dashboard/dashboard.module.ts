@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { ChartModule } from '../chart/chart.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DataTablesModule } from 'angular-datatables';
     DashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    ChartModule
   ]
 })
 export class DashboardModule { }

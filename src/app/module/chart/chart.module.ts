@@ -26,6 +26,8 @@ import { PieChartStockComponent } from './pie-chart-stock/pie-chart-stock.compon
   imports: [
     CommonModule,
     ChartRoutingModule
-  ]
+  ],
+  exports: [BarCharCommandeComponent] 
 })
 export class ChartModule { }
+
