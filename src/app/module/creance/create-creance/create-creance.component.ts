@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Creance } from 'src/app/models/creance';
 import { LigneCreance } from 'src/app/models/ligne-creance';
 import { Product } from 'src/app/models/product';
-import { ClientService } from 'src/app/services/client.service';
+import { ClientService } from '../../client/services/client.service';
+import { ProductService } from '../../product/services/product.service';
 import { CreanceService } from 'src/app/services/creance.service';
 import { LigneCreanceService } from 'src/app/services/ligne-creance.service';
-import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-create-creance',

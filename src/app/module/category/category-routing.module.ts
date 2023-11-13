@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateCategoryComponent } from './create-category/create-category.component';
-import { ListCategoryComponent } from './list-category/list-category.component';
+import { ListCategoryComponent } from './pages/list-category/list-category.component';
+import { CreateCategoryComponent } from './pages/create-category/create-category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
@@ -13,10 +13,6 @@ const routes: Routes = [
     path: 'create',
     component: CreateCategoryComponent,
   },
-  /* {
-    path: 'create/:id',
-    component: CreateCategoryComponent,
-  }, */
   {
     path: 'edit/:id',
     component: CreateCategoryComponent

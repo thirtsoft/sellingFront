@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Commande } from 'src/app/models/commande';
 import { LigneCommande } from 'src/app/models/ligne-commande';
 import { Product } from 'src/app/models/product';
-import { ClientService } from 'src/app/services/client.service';
 import { CommandeService } from 'src/app/services/commande.service';
 import { LigneCommandeService } from 'src/app/services/ligne-commande.service';
-import { ProductService } from 'src/app/services/product.service';
+import { ClientService } from '../../client/services/client.service';
+import { ProductService } from '../../product/services/product.service';
 
 @Component({
   selector: 'app-create-commande',

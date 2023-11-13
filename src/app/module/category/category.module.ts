@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables'
 import { CategoryRoutingModule } from './category-routing.module';
-import { ListCategoryComponent } from './list-category/list-category.component';
-import { CreateCategoryComponent } from './create-category/create-category.component';
+import { ListCategoryComponent } from './pages/list-category/list-category.component';
+import { CreateCategoryComponent } from './pages/create-category/create-category.component';
+
 
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateSubCategoryComponent } from './create-sub-category/create-sub-category.component';
-import { ListSubCategoryComponent } from './list-sub-category/list-sub-category.component';
+import { ListSubCategoryComponent } from './pages/list-sub-category/list-sub-category.component';
+import { CreateSubCategoryComponent } from './pages/create-sub-category/create-sub-category.component';
 
 const routes: Routes = [
 

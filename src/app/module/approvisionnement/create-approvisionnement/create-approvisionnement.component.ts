@@ -4,9 +4,9 @@ import { Approvisionnement } from 'src/app/models/approvisionnement';
 import { LigneApprovisionnement } from 'src/app/models/ligne-approvisionnement';
 import { Product } from 'src/app/models/product';
 import { ApprovisionnementService } from 'src/app/services/approvisionnement.service';
-import { FournisseurService } from 'src/app/services/fournisseur.service';
+import { FournisseurService } from '../../fournisseur/services/fournisseur.service';
+import { ProductService } from '../../product/services/product.service';
 import { LigneApprovisionnementService } from 'src/app/services/ligne-approvisionnement.service';
-import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-create-approvisionnement',

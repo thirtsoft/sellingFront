@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateDepenseComponent } from './create-depense/create-depense.component';
-import { CreateTypeDepenseComponent } from './create-type-depense/create-type-depense.component';
-import { ListDepenseComponent } from './list-depense/list-depense.component';
-import { ListTypeDepenseComponent } from './list-type-depense/list-type-depense.component';
+import { CreateDepenseComponent } from './pages/create-depense/create-depense.component';
+import { CreateTypeDepenseComponent } from './pages/create-type-depense/create-type-depense.component';
+import { ListDepenseComponent } from './pages/list-depense/list-depense.component';
+import { ListTypeDepenseComponent } from './pages/list-type-depense/list-type-depense.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },

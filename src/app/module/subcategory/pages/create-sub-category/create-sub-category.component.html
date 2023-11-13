@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="clo-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Gestion</a></li>
+                        <li class="breadcrumb-item active">Categories</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Ajout/Modifier</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6" style="margin-left: auto; margin-right: auto;">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title" *ngIf="!paramId">Nouvelle sous-catégorie</h4>
+                    <h4 class="header-title" *ngIf="paramId">Modifié sous-catégorie</h4>
+                    <ul class="nav nav-tabs nav-bordered mb-3"></ul>
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="custom-styles-preview">
+                            <form #addCategoryForm="ngForm" class="needs-validation" novalidate="">
+                                <div class="mb-3">
+                                    <label class="form-label" for="validationCustom01">Code</label>
+                                    <input type="text" class="form-control" [(ngModel)]="subCategoryData.code" name="code" id="code" #code="ngModel" placeholder="Code sous categorie" required="">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="validationCustom02">Libelle</label>
+                                    <input type="text" class="form-control" [(ngModel)]="subCategoryData.libelle" name="libelle" id="libelle" #libelle="ngModel" placeholder="Libelle sous categorie" required="">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <h5 class="mb-3">Catégorie</h5>
+                                    <div class="form-floating">
+                                        <select class="form-select" [(ngModel)]="subCategoryData.category" name="category" id="category" #category="ngModel" aria-label="Floating label select example">
+                                            <option value="0">Select</option>
+                                            <option
+                                                *ngFor="let cat of categoriesListData"
+                                                [ngValue]="
+                                                cat.id == subCategoryData.category?.id
+                                                    ? subCategoryData.category
+                                                    : cat
+                                                "
+                                            >
+                                            {{cat.designation}}</option>
+                                        </select>
+                                        <!--  <label for="floatingSelect">Works with selects</label> -->
+                                    </div>
+                                </div>
+
+                                <div class="button-group mb-3">
+                                    <button *ngIf="!paramId" type="submit" class="btn btn-success btn-lg mb-1" (click)="onAddSubCategory()" style="cursor: pointer;">
+                                        <i class="fa fa-database"></i> Enregistrer</button
+                                      >&nbsp;&nbsp;
+                                    <button
+                                        *ngIf="paramId"
+                                        class="btn btn-success btn-lg mb-1"
+                                        (click)="onUpdateSubCategory()"
+                                        style="cursor: pointer;"
+                                        >
+                                        <i class="fa fa-database"></i>Modifier
+                                        </button>&nbsp;&nbsp;
+                                    <button routerLink="/subcategorie/list" class="btn btn-warning btn-lg mb-1">
+                                        <i class="mdi mdi-arrow-left"></i> Retour</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Creance } from 'src/app/models/creance';
 import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/module/product/services/product.service';
 import { CreanceService } from 'src/app/services/creance.service';
-import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-header',

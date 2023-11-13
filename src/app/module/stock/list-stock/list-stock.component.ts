@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ProductService } from '../../product/services/product.service';
 import { Product } from 'src/app/models/product';
-import { ProductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-list-stock',

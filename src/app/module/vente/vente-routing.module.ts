@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateLigneVenteComponent } from './create-ligne-vente/create-ligne-vente.component';
-import { CreateVenteWithBarCodeComponent } from './create-vente-with-bar-code/create-vente-with-bar-code.component';
-import { CreateVenteComponent } from './create-vente/create-vente.component';
-import { InvoiceVenteComponent } from './invoice-vente/invoice-vente.component';
-import { ListLigneVenteComponent } from './list-ligne-vente/list-ligne-vente.component';
-import { ListVenteComponent } from './list-vente/list-vente.component';
-import { ViewVenteComponent } from './view-vente/view-vente.component';
+import { CreateLigneVenteComponent } from './pages/create-ligne-vente/create-ligne-vente.component';
+import { CreateVenteWithBarCodeComponent } from './pages/create-vente-with-bar-code/create-vente-with-bar-code.component';
+import { CreateVenteComponent } from './pages/create-vente/create-vente.component';
+import { InvoiceVenteComponent } from './pages/invoice-vente/invoice-vente.component';
+import { ListLigneVenteComponent } from './pages/list-ligne-vente/list-ligne-vente.component';
+import { ListVenteComponent } from './pages/list-vente/list-vente.component';
+import { ViewVenteComponent } from './pages/view-vente/view-vente.component';
 
 const routes: Routes = [
   
